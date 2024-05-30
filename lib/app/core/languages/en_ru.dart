@@ -1,0 +1,45 @@
+const Map<String, String> enRU = {
+  // API Error
+  'unknownError': 'Неизвестная ошибка. Пожалуйста, повторите попытку позже!',
+  'timeoutError':
+      'Время ожидания подключения истекло. Пожалуйста, повторите попытку позже!',
+  'noConnectionError': 'Нет подключения. Пожалуйста, проверьте свой Интернет!',
+  'unauthorizedError': 'Неавторизованный. Пожалуйста, повторите попытку позже!',
+  'tryAgain': 'Попробуйте еще раз',
+  'identify': 'Идентифицировать',
+  'error': 'Ошибка!',
+  'successful': 'Успешно!',
+  'notMatch': 'Лицо не зарегистрировано!',
+  'noEmpty': 'Khôngỏc bỏ trống!',
+  'noRecords': 'Записей нет, пожалуйста, потяните вниз, чтобы обновить...',
+  'pleaseLogin': 'Пожалуйста, войдите в систему',
+  'noData': 'Записей пока нет',
+  'enterText': 'Введите текст',
+
+  'authorization.stayBetter': 'Становитесь лучше вместе с нами',
+  'authorization.greetings':
+      'Для того, чтобы начать терапию, войдите или зарегистрируйтесь',
+  'authorization.loginButton': 'Войти',
+  'authorization.loginGoogle': 'Войти с помощью Google',
+  'authorization.entrance': 'Вход',
+  'authorization.registerButton': 'Зарегистрироваться',
+  'authorization.registration': 'Регистрация',
+  'authorization.enterName': 'Как вас зовут?',
+  'authorization.enterEmail': 'Электронная почта',
+  'authorization.enterPassword': 'Введите пароль',
+  'authorization.enterNewPassword': 'Придумайте пароль',
+  'authorization.enterNewPasswordAgain': 'Повторите пароль',
+  'authorization.agreePrivacyPolicy':
+      'Я соглашаюсь с политикой конфиденциальности',
+  'authorization.alreadyRegistered': 'Уже есть аккаунт?',
+  'authorization.check': 'Проверка',
+  'authorization.enterCode': 'Введите код, отправленный на вашу почту',
+  'authorization.iHaveClinicCode': 'У меня есть код клиники',
+  'authorization.resendCode': 'Выслать код повторно',
+  'authorization.enterClinicCode': 'Введите код клиники',
+  'authorization.noCode':
+      'Если вам назначили терапию в нашем приложении, но не дали код, обратитесь в клинику',
+  'authorization.or': 'Или',
+  'authorization.noAccount': 'Нет аккаунта?',
+  'application.continue': 'Продолжить',
+};
