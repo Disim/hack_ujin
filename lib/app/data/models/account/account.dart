@@ -6,7 +6,8 @@ part 'account.g.dart';
 @freezed
 class Account with _$Account {
   factory Account({
-    required String email,
+    String? email,
+    String? userName,
   }) = _Account;
 
   factory Account.fromJson(Map<String, dynamic> json) =>

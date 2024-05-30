@@ -18,41 +18,51 @@ class ProfileView extends GetView<ProfileController> {
               onPressed: () => controller.onLogout(), icon: Icon(Icons.logout))
         ],
       ),
-      floatingActionButton: Obx(() {
-        return FloatingActionButton(
-          onPressed: () => controller.onChangeMode(),
-          child: controller.editMode
-              ? const Icon(Icons.save)
-              : const Icon(Icons.edit),
-        );
-      }),
+      // floatingActionButton: Obx(() {
+      //   return FloatingActionButton(
+      //     onPressed: () => controller.onChangeMode(),
+      //     child: controller.editMode
+      //         ? const Icon(Icons.save)
+      //         : const Icon(Icons.edit),
+      //   );
+      // }),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: GetBuilder<ProfileController>(
-            builder: (_) {
-              return Form(
-                child: ListView(
+          child: Form(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
                   children: [
                     const SizedBox(
                       height: 75,
                       width: 75,
                       child: AppCircleAvatar(),
                     ),
-                    TextFormField(
-                      readOnly: true,
-                      controller: _.nameController,
+                    Center(
+                      child: Obx(
+                        () => Text(controller.name.value,
+                            style: const TextStyle(fontSize: 20)),
+                      ),
                     ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    ElevatedButton(
-                        onPressed: () => _.onChangePassword(),
-                        child: const Text('Сменить пароль')),
                   ],
                 ),
-              );
-            },
+                Column(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () => controller.onUjinAuthorization(),
+                      child: const Text('Авторизоваться в Ujin'),
+                    ),
+                    const SizedBox(height: 12),
+                    ElevatedButton(
+                      onPressed: () => controller.onChangePassword(),
+                      child: const Text('Сменить пароль'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

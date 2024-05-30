@@ -10,6 +10,8 @@ import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/ujin_authorization/bindings/ujin_authorization_binding.dart';
+import '../modules/ujin_authorization/views/ujin_authorization_view.dart';
 
 part 'app_routes.dart';
 
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.UJIN_AUTHORIZATION,
+      page: () => const UjinAuthorizationView(),
+      binding: UjinAuthorizationBinding(),
     ),
   ];
 }

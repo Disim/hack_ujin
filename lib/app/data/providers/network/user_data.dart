@@ -1,9 +1,6 @@
-import 'dart:convert';
-
 import 'package:get/get.dart';
 
 import '../../../core/values/consts.dart';
-import '../../../core/values/globals.dart' as global;
 import '../../models/account/account.dart';
 import '../../services/api_service.dart';
 import '../../services/auth_service.dart';
@@ -18,7 +15,8 @@ class UserDataApi {
   getAll() async {
     try {
       var response = await apiService.request(ApiEndpoints.account,
-          method: HttpMethod.POST);
+          method: HttpMethod.POST,
+          headers: {HttpHeaders.accessToken: authService.accessToken});
       if (response.statusCode == 200) {
         Map<String, dynamic> jsonResponse = response.data;
         return Account.fromJson(jsonResponse);
@@ -29,19 +27,4 @@ class UserDataApi {
       '$_ $stack'.printError();
     }
   }
-
-  // changePassword(String email) async {
-  //   try {
-  //     var response = await apiService.request(
-  //       ApiEndpoints.resetPassword,
-  //       data: jsonEncode({'email': email}),
-  //       method: HttpMethod.POST,
-  //     );
-  //     if (response.statusCode == 204) {
-  //       return response;
-  //     } else {
-  //       response.statusCode.printError();
-  //     }
-  //   } catch (_) {}
-  // }
 }

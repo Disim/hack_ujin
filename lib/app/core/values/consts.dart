@@ -9,8 +9,9 @@ abstract class Constants {
 }
 
 abstract class HttpHeaders {
-  static const AccessToken = 'Authorization';
-  static const RefreshToken = 'refresh';
+  static const accessToken = 'Authorization';
+  static const refresh = 'refresh';
+  static const refreshToken = 'refreshToken';
 }
 
 enum HttpMethod {

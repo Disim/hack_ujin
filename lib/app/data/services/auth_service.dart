@@ -51,7 +51,7 @@ class AuthService extends GetxService {
       Map<String, dynamic> map = {};
       var refreshToken = await _storage.getRefresh();
       if (refreshToken == null) throw 'No token.';
-      map.addEntries([MapEntry(HttpHeaders.RefreshToken, refreshToken)]);
+      map.addEntries([MapEntry(HttpHeaders.refreshToken, refreshToken)]);
       var result = await client.post(ApiEndpoints.refreshTokens, data: map);
       if (result.statusCode == 200) {
         var newTokens = JwtModel.fromJson(result.data);

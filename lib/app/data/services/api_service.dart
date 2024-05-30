@@ -23,9 +23,9 @@ class ApiService extends GetxService {
     httpClient.interceptors.add(InterceptorsWrapper(
       onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
         if (_auth.accessToken != null &&
-            !options.headers.keys.contains(HttpHeaders.RefreshToken)) {
+            !options.headers.keys.contains(HttpHeaders.refresh)) {
           var h = options.headers;
-          h[HttpHeaders.AccessToken] = 'Bearer ${_auth.accessToken}';
+          h[HttpHeaders.accessToken] = _auth.accessToken;
           RequestOptions newOpt = options.copyWith(headers: h);
           handler.next(newOpt);
         } else {
@@ -60,13 +60,14 @@ class ApiService extends GetxService {
   Future<Response> request(
     String path, {
     HttpMethod method = HttpMethod.GET,
+    Map<String, dynamic>? headers,
     dynamic data,
   }) async {
     try {
       var response = await httpClient.request(
         path,
         data: data,
-        options: Options(method: method.name),
+        options: Options(method: method.name, headers: headers),
       );
       return response;
     } catch (e) {
