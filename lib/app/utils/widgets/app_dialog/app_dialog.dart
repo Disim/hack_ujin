@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/themes/app_text_theme.dart';
-import '../app_button/app_button.dart';
 
 class AppDialog extends StatelessWidget {
   const AppDialog({
@@ -66,8 +65,8 @@ class AppDialog extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: AppButton.outline(
-                          text: textCancel,
+                        child: ElevatedButton(
+                          child: Text(textCancel ?? 'Отмена'),
                           onPressed: () => Get.back(),
                         ),
                       ),
@@ -75,8 +74,8 @@ class AppDialog extends StatelessWidget {
                         width: 8,
                       ),
                       Expanded(
-                        child: AppButton(
-                          text: textConfirm,
+                        child: ElevatedButton(
+                          child: Text(textConfirm ?? 'Подтвердить'),
                           onPressed: () {
                             if (onConfirm != null) onConfirm!();
                           },
@@ -89,15 +88,15 @@ class AppDialog extends StatelessWidget {
             ),
             Visibility(
               visible: textCancel != null && textConfirm == null,
-              child: AppButton.outline(
-                text: textCancel,
+              child: ElevatedButton(
+                child: Text(textCancel ?? 'Отмена'),
                 onPressed: () => Get.back(),
               ),
             ),
             Visibility(
               visible: textConfirm != null && textCancel == null,
-              child: AppButton.outline(
-                text: textConfirm,
+              child: ElevatedButton(
+                child: Text(textConfirm ?? 'Подтвердить'),
                 onPressed: () {
                   if (onConfirm != null) onConfirm!();
                 },
