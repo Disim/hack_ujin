@@ -77,8 +77,6 @@ class AuthService extends GetxService {
         }
       }
       var tokens = JwtModel.fromJson(response.data);
-      print(tokens);
-      // global.accountId = response.data['accountId'];
       updateTokens(tokens);
       return 0;
     } on DioException catch (e) {

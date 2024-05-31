@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'account.freezed.dart';
@@ -7,7 +9,8 @@ part 'account.g.dart';
 class Account with _$Account {
   factory Account({
     String? email,
-    String? userName,
+    @JsonKey(name: 'username') String? userName,
+    String? ujinToken,
   }) = _Account;
 
   factory Account.fromJson(Map<String, dynamic> json) =>

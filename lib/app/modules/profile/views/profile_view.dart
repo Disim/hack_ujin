@@ -48,13 +48,27 @@ class ProfileView extends GetView<ProfileController> {
                             style: const TextStyle(fontSize: 20)),
                       ),
                     ),
+                    TextFormField(
+                        controller: controller.emailController, readOnly: true),
                   ],
                 ),
                 Column(
                   children: [
-                    ElevatedButton(
-                      onPressed: () => controller.onUjinAuthorization(),
-                      child: const Text('Авторизоваться в Ujin'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () => controller.onUjinAuthorization(),
+                          child: const Text('Авторизоваться в Ujin'),
+                        ),
+                        Visibility(
+                          visible: controller.ujinAuthorized,
+                          child: Icon(
+                            Icons.check_circle_sharp,
+                            color: Colors.green[200],
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 12),
                     ElevatedButton(

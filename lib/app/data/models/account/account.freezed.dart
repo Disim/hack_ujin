@@ -21,7 +21,9 @@ Account _$AccountFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Account {
   String? get email => throw _privateConstructorUsedError;
+  @JsonKey(name: 'username')
   String? get userName => throw _privateConstructorUsedError;
+  String? get ujinToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +35,10 @@ abstract class $AccountCopyWith<$Res> {
   factory $AccountCopyWith(Account value, $Res Function(Account) then) =
       _$AccountCopyWithImpl<$Res, Account>;
   @useResult
-  $Res call({String? email, String? userName});
+  $Res call(
+      {String? email,
+      @JsonKey(name: 'username') String? userName,
+      String? ujinToken});
 }
 
 /// @nodoc
@@ -51,6 +56,7 @@ class _$AccountCopyWithImpl<$Res, $Val extends Account>
   $Res call({
     Object? email = freezed,
     Object? userName = freezed,
+    Object? ujinToken = freezed,
   }) {
     return _then(_value.copyWith(
       email: freezed == email
@@ -60,6 +66,10 @@ class _$AccountCopyWithImpl<$Res, $Val extends Account>
       userName: freezed == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ujinToken: freezed == ujinToken
+          ? _value.ujinToken
+          : ujinToken // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -72,7 +82,10 @@ abstract class _$$AccountImplCopyWith<$Res> implements $AccountCopyWith<$Res> {
       __$$AccountImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? email, String? userName});
+  $Res call(
+      {String? email,
+      @JsonKey(name: 'username') String? userName,
+      String? ujinToken});
 }
 
 /// @nodoc
@@ -88,6 +101,7 @@ class __$$AccountImplCopyWithImpl<$Res>
   $Res call({
     Object? email = freezed,
     Object? userName = freezed,
+    Object? ujinToken = freezed,
   }) {
     return _then(_$AccountImpl(
       email: freezed == email
@@ -98,6 +112,10 @@ class __$$AccountImplCopyWithImpl<$Res>
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String?,
+      ujinToken: freezed == ujinToken
+          ? _value.ujinToken
+          : ujinToken // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -105,7 +123,8 @@ class __$$AccountImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AccountImpl implements _Account {
-  _$AccountImpl({this.email, this.userName});
+  _$AccountImpl(
+      {this.email, @JsonKey(name: 'username') this.userName, this.ujinToken});
 
   factory _$AccountImpl.fromJson(Map<String, dynamic> json) =>
       _$$AccountImplFromJson(json);
@@ -113,11 +132,14 @@ class _$AccountImpl implements _Account {
   @override
   final String? email;
   @override
+  @JsonKey(name: 'username')
   final String? userName;
+  @override
+  final String? ujinToken;
 
   @override
   String toString() {
-    return 'Account(email: $email, userName: $userName)';
+    return 'Account(email: $email, userName: $userName, ujinToken: $ujinToken)';
   }
 
   @override
@@ -127,12 +149,14 @@ class _$AccountImpl implements _Account {
             other is _$AccountImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.userName, userName) ||
-                other.userName == userName));
+                other.userName == userName) &&
+            (identical(other.ujinToken, ujinToken) ||
+                other.ujinToken == ujinToken));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, email, userName);
+  int get hashCode => Object.hash(runtimeType, email, userName, ujinToken);
 
   @JsonKey(ignore: true)
   @override
@@ -149,15 +173,20 @@ class _$AccountImpl implements _Account {
 }
 
 abstract class _Account implements Account {
-  factory _Account({final String? email, final String? userName}) =
-      _$AccountImpl;
+  factory _Account(
+      {final String? email,
+      @JsonKey(name: 'username') final String? userName,
+      final String? ujinToken}) = _$AccountImpl;
 
   factory _Account.fromJson(Map<String, dynamic> json) = _$AccountImpl.fromJson;
 
   @override
   String? get email;
   @override
+  @JsonKey(name: 'username')
   String? get userName;
+  @override
+  String? get ujinToken;
   @override
   @JsonKey(ignore: true)
   _$$AccountImplCopyWith<_$AccountImpl> get copyWith =>

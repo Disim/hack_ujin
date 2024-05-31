@@ -21,7 +21,7 @@ class UserDataApi {
           headers: {HttpHeaders.accessToken: authService.accessToken});
       if (response.statusCode == 200) {
         Map<String, dynamic> jsonResponse = response.data;
-        return Account.fromJson(jsonResponse);
+        return Account.fromJson(jsonResponse['user']);
       } else {
         authService.logout();
       }
