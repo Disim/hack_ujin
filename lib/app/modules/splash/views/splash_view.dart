@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:hack_ujin/app/utils/widgets/images/old/images_widgets.dart';
+import 'package:hack_ujin/app/utils/widgets/images/images_widgets.dart';
 
 import '../controllers/splash_controller.dart';
 

@@ -10,10 +10,6 @@ class SplashController extends GetxController {
   final title = 'Hack UJIN';
 
   AuthService get authService => AuthService.instance;
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
   @override
   void onReady() async {
@@ -24,10 +20,5 @@ class SplashController extends GetxController {
     } else {
       Get.offNamed(Routes.LOGIN);
     }
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:hack_ujin/app/routes/app_pages.dart';
-import 'package:hack_ujin/app/utils/widgets/images/old/images_widgets.dart';
+import 'package:hack_ujin/app/utils/widgets/images/images_widgets.dart';
 import 'package:hack_ujin/app/utils/widgets/loading_bar/loading_bar.dart';
 
 import '../controllers/login_controller.dart';

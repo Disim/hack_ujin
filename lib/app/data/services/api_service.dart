@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' hide Response;
+import 'package:hack_ujin/app/data/providers/network/api_endpoints.dart';
 
 import '../../core/values/consts.dart';
 import 'auth_service.dart';
@@ -43,6 +44,8 @@ class ApiService extends GetxService {
               ),
             );
             return handler.resolve(newRequest);
+          } else if (e.requestOptions.path == ApiEndpoints.ujinAuth) {
+            Get.snackbar('Ошибка', 'Проверьте введенные данные');
           } else {
             await _auth.logout();
           }

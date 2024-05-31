@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 abstract class Constants {
-  static const SERVER_URL = 'https://89.23.115.103:7085/';
+  static const SERVER_URL = 'https://apidsds.ru:7085/';
   static const API_VERSION = 'api/v1/';
 
   static const BASE_URL = '$SERVER_URL$API_VERSION';

@@ -8,9 +8,9 @@ part of 'user_sign_dto.dart';
 
 _$UserSignDTOImpl _$$UserSignDTOImplFromJson(Map<String, dynamic> json) =>
     _$UserSignDTOImpl(
-      username: json['username'] as String,
-      email: json['email'] as String,
-      password: json['password'] as String,
+      username: json['username'] as String?,
+      email: json['email'] as String?,
+      password: json['password'] as String?,
     );
 
 Map<String, dynamic> _$$UserSignDTOImplToJson(_$UserSignDTOImpl instance) =>

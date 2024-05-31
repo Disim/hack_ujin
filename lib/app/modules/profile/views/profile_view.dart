@@ -15,7 +15,9 @@ class ProfileView extends GetView<ProfileController> {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () => controller.onLogout(), icon: Icon(Icons.logout))
+            onPressed: () => controller.onLogout(),
+            icon: const Icon(Icons.logout),
+          ),
         ],
       ),
       // floatingActionButton: Obx(() {

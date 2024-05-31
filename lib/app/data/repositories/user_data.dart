@@ -1,3 +1,5 @@
+import 'package:hack_ujin/app/data/models/user_sign_dto/user_sign_dto.dart';
+
 import '../providers/network/user_data.dart';
 
 class UserDataRepository {
@@ -9,7 +11,7 @@ class UserDataRepository {
     return api.getAll();
   }
 
-  // changePassword(String email) {
-  //   return api.changePassword(email);
-  // }
+  loginUjin(UserSignDTO userSignDTO) async {
+    return await api.loginUjin(userSignDTO);
+  }
 }

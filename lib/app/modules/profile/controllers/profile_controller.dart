@@ -12,19 +12,9 @@ class ProfileController extends GetxController {
   get editMode => _editMode.value;
 
   @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
   void onReady() {
     super.onReady();
     name.value = Get.find<UserService>().user.value?.userName ?? '';
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 
   void onEdit() => _editMode.value = true;

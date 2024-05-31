@@ -22,21 +22,6 @@ class LoginController extends GetxController {
   final _loading = false.obs;
   bool get loading => _loading.value;
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
   void onLogin() async {
     if (formKey.currentState?.validate() ?? false) {
       _loading.value = true;

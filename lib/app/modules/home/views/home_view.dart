@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hack_ujin/app/routes/app_pages.dart';
 import 'package:hack_ujin/app/utils/widgets/app_circle_avatar/circle_avatar.dart';
+import 'package:hack_ujin/app/utils/widgets/images/images_widgets.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -16,14 +17,11 @@ class HomeView extends GetView<HomeController> {
           icon: const AppCircleAvatar(),
           onPressed: () => Get.toNamed(Routes.PROFILE),
         ),
-        title: const Text('HomeView'),
+        title: const Text('Главная'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: Center(
+        child: Hero(tag: 'logo', child: teamLogo),
       ),
     );
   }

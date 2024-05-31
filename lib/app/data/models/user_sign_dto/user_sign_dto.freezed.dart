@@ -20,9 +20,9 @@ UserSignDTO _$UserSignDTOFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserSignDTO {
-  String get username => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
+  String? get username => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $UserSignDTOCopyWith<$Res> {
           UserSignDTO value, $Res Function(UserSignDTO) then) =
       _$UserSignDTOCopyWithImpl<$Res, UserSignDTO>;
   @useResult
-  $Res call({String username, String email, String password});
+  $Res call({String? username, String? email, String? password});
 }
 
 /// @nodoc
@@ -52,23 +52,23 @@ class _$UserSignDTOCopyWithImpl<$Res, $Val extends UserSignDTO>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = null,
-    Object? email = null,
-    Object? password = null,
+    Object? username = freezed,
+    Object? email = freezed,
+    Object? password = freezed,
   }) {
     return _then(_value.copyWith(
-      username: null == username
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
+              as String?,
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
+              as String?,
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$UserSignDTOImplCopyWith<$Res>
       __$$UserSignDTOImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String username, String email, String password});
+  $Res call({String? username, String? email, String? password});
 }
 
 /// @nodoc
@@ -95,23 +95,23 @@ class __$$UserSignDTOImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = null,
-    Object? email = null,
-    Object? password = null,
+    Object? username = freezed,
+    Object? email = freezed,
+    Object? password = freezed,
   }) {
     return _then(_$UserSignDTOImpl(
-      username: null == username
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
+              as String?,
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
+              as String?,
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -119,18 +119,17 @@ class __$$UserSignDTOImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UserSignDTOImpl implements _UserSignDTO {
-  _$UserSignDTOImpl(
-      {required this.username, required this.email, required this.password});
+  _$UserSignDTOImpl({this.username, this.email, this.password});
 
   factory _$UserSignDTOImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserSignDTOImplFromJson(json);
 
   @override
-  final String username;
+  final String? username;
   @override
-  final String email;
+  final String? email;
   @override
-  final String password;
+  final String? password;
 
   @override
   String toString() {
@@ -169,19 +168,19 @@ class _$UserSignDTOImpl implements _UserSignDTO {
 
 abstract class _UserSignDTO implements UserSignDTO {
   factory _UserSignDTO(
-      {required final String username,
-      required final String email,
-      required final String password}) = _$UserSignDTOImpl;
+      {final String? username,
+      final String? email,
+      final String? password}) = _$UserSignDTOImpl;
 
   factory _UserSignDTO.fromJson(Map<String, dynamic> json) =
       _$UserSignDTOImpl.fromJson;
 
   @override
-  String get username;
+  String? get username;
   @override
-  String get email;
+  String? get email;
   @override
-  String get password;
+  String? get password;
   @override
   @JsonKey(ignore: true)
   _$$UserSignDTOImplCopyWith<_$UserSignDTOImpl> get copyWith =>

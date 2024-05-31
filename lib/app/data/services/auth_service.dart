@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
@@ -27,7 +26,6 @@ class AuthService extends GetxService {
   );
   String? get accessToken => _tokens.access;
   Future<AuthService> init() async {
-    HttpOverrides.global = MyHttpOverrides();
     isLogged = await refreshTokens();
     return this;
   }
@@ -115,19 +113,4 @@ class AuthService extends GetxService {
       sign(userSignDTO, ApiEndpoints.signUp);
 
   Future<void> logout() async => await clearTokens();
-}
-
-class MyHttpOverrides extends HttpOverrides {
-  @override
-  HttpClient createHttpClient(SecurityContext? context) {
-    // <-- изменено здесь
-    return super.createHttpClient(context) // используем context как nullable
-      ..badCertificateCallback =
-          ((X509Certificate cert, String host, int port) {
-        final isValidHost = [
-          "89.23.115.103",
-        ].contains(host); // <-- allow only hosts in array
-        return isValidHost;
-      });
-  }
 }

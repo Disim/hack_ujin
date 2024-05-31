@@ -1,18 +1,11 @@
 import 'package:get/get.dart';
+import 'package:hack_ujin/app/data/repositories/user_data.dart';
 
 class HomeController extends GetxController {
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  final UserDataRepository repository;
+  HomeController(this.repository);
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
+  void onTapped() {
+    repository.getAll();
   }
 }
